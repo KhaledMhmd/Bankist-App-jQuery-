@@ -1,0 +1,488 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 62%;
+}
+body {
+  background-color: #ddd9dd;
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+@media all and (min-width: 778px) {
+  .welcomeText {
+    padding: 50px;
+    font-size: 2rem;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+  }
+
+  .loginForm {
+    margin-right: 50px;
+  }
+  .loginInfo {
+    padding: 0.5rem 2rem;
+    font-size: 1.5rem;
+    font-family: inherit;
+    text-align: center;
+    width: 12rem;
+    border-radius: 10rem;
+    margin-right: 1rem;
+    color: inherit;
+    border: 1px solid #fff;
+    transition: all 0.3s;
+    margin-top: 40px;
+  }
+  .loginInfo:focus {
+    outline: none;
+    border: 1px solid #ccc;
+  }
+  .loginInfo:focus::placeholder {
+    color: transparent;
+  }
+  .loginButton {
+    background-color: #ddd9dd;
+    border: 1px solid #ddd9dd;
+    font-size: 30px;
+    color: #444;
+  }
+  .loginButton:hover {
+    cursor: pointer;
+  }
+  .loginButton:focus {
+    outline: none;
+    border: none;
+  }
+  .logoutButton {
+    margin-top: 10px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    font-size: 1.5rem;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: 1px solid #ddd9dd;
+    color: #444;
+  }
+  .logoutButton:focus {
+    outline: none;
+    border: 1px solid #ccc;
+  }
+  .logoutButton:hover {
+    cursor: pointer;
+  }
+
+  .mainTitle {
+    display: flex;
+    justify-content: space-between;
+  }
+  .title {
+    position: relative;
+    top: 20px;
+    left: 190px;
+    font-size: 2.6rem;
+  }
+  .balanceDate {
+    font-size: 1.6rem;
+    color: rgb(97, 96, 96);
+  }
+  .accountBalance {
+    position: relative;
+    top: 20px;
+    right: 190px;
+    font-size: 3.5rem;
+  }
+  .hidden {
+    display: none;
+  }
+  .mainBody {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .history {
+    background-color: white;
+    padding: 20px;
+    width: 40vw;
+    height: 75vh;
+    overflow: auto;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  .transaction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.5rem;
+    padding: 2.25rem 4rem;
+  }
+  .actionType {
+    font-size: 1.3rem;
+    margin-right: 2rem;
+    border-radius: 2px;
+    padding: 0.1rem 1rem;
+    border-radius: 2rem;
+    color: white;
+  }
+  .actionDate {
+    font-size: 1.1rem;
+    text-align: left;
+    /* margin-right: 20rem; */
+  }
+  .actionAmount {
+    text-align: right;
+    font-size: 1.7rem;
+    margin-left: auto;
+  }
+  .deposit {
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+  }
+  .withdrawal {
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+  }
+  .transfer {
+    background-color: #ffcb03;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  .transferTitle {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: black;
+  }
+  .transferTo {
+    padding: 0.5rem 2rem;
+    font-size: 1.3rem;
+    font-family: inherit;
+    text-align: center;
+    width: 12rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: inherit;
+    border: 1px solid #ffe685;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .transferTo:focus {
+    outline: none;
+    border: 1px solid #ffe685;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .transferTo:focus::placeholder {
+    color: transparent;
+  }
+
+  .transferAmount {
+    padding: 0.5rem 2rem;
+    font-size: 1.3rem;
+    font-family: inherit;
+    text-align: center;
+    width: 12rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: inherit;
+    border: 1px solid #ffe685;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .transferAmount:focus {
+    outline: none;
+    border: 1px solid #ffe685;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .transferAmount:focus::placeholder {
+    color: transparent;
+  }
+  .transferButton {
+    background-color: #ddd9dd;
+    border: 1px solid #ddd9dd;
+    font-size: 30px;
+    color: #444;
+    background-color: #ffcb03;
+    border: none;
+    outline: none;
+    position: relative;
+    top: 3px;
+  }
+  .transferButton:hover {
+    cursor: pointer;
+  }
+  .transferButton:focus {
+    outline: none;
+    border: none;
+  }
+  .request {
+    background-color: #39b385;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  .requestTitle {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: black;
+  }
+  .loanAmount {
+    padding: 0.5rem 2rem;
+    font-size: 1.3rem;
+    font-family: inherit;
+    text-align: center;
+    width: 12rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: inherit;
+    border: 1px solid #81e4c0;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .loanAmount:focus {
+    outline: none;
+    border: 1px solid#81e4c0;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .loanAmount:focus::placeholder {
+    color: transparent;
+  }
+  .requestButton {
+    font-size: 30px;
+    color: #444;
+    background-color: #39b385;
+    border: none;
+    outline: none;
+    position: relative;
+    top: 3px;
+  }
+  .requestButton:hover {
+    cursor: pointer;
+  }
+  .requestButton:focus {
+    outline: none;
+    border: none;
+  }
+  .closeAccount {
+    background-color: #e52a5a;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  .closeTitle {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: black;
+  }
+  .confirmUsername {
+    padding: 0.5rem 2rem;
+    font-size: 1.3rem;
+    font-family: inherit;
+    text-align: center;
+    width: 14rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: inherit;
+    border: 1px solid #e52a5a;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .confirmUsername:focus {
+    outline: none;
+    border: 1px solid #e52a5a;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .confirmUsername:focus::placeholder {
+    color: transparent;
+  }
+  .confirmUsername::placeholder {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+  }
+  .closeAccountButton {
+    background-color: #ddd9dd;
+    border: 1px solid #ddd9dd;
+    font-size: 30px;
+    color: #444;
+    background-color: #e52a5a;
+    border: none;
+    outline: none;
+    position: relative;
+    top: 3px;
+  }
+  .closeAccountButton:hover {
+    cursor: pointer;
+  }
+  .closeAccountButton:focus {
+    outline: none;
+    border: none;
+  }
+  .confirmPassword {
+    padding: 0.5rem 2rem;
+    font-size: 1.3rem;
+    font-family: inherit;
+    text-align: center;
+    width: 14rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: inherit;
+    border: 1px solid #e52a5a;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .confirmPassword::placeholder {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+  }
+  .confirmPassword:focus {
+    outline: none;
+    border: 1px solid #e52a5a;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  .confirmPassword:focus::placeholder {
+    color: transparent;
+  }
+  .mainBottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  .gotIn {
+    margin-left: 100px;
+    margin-top: 50px;
+    font-size: 1.3rem;
+    color: #444;
+  }
+  .gotInAmount {
+    margin-left: 5px;
+    font-size: 2.5rem;
+    color: #39b385;
+  }
+  .gotOut {
+    position: relative;
+    top: 50px;
+    left: -100px;
+    font-size: 1.3rem;
+    color: #444;
+  }
+  .gotOutAmount {
+    margin-left: 5px;
+    font-size: 2.5rem;
+    color: #e52a5a;
+  }
+  .interest {
+    position: relative;
+    top: 50px;
+    left: -200px;
+    font-size: 1.3rem;
+    color: #444;
+  }
+  .interestAmount {
+    margin-left: 5px;
+    font-size: 2.5rem;
+    color: #0000ffa9;
+  }
+  .sortButton {
+    background-color: #ddd9dd;
+    border: 1px solid #ddd9dd;
+    font-size: 20px;
+    color: #444;
+    position: relative;
+    top: 10px;
+    left: -300px;
+  }
+  .sortButton:hover {
+    cursor: pointer;
+  }
+  .sortButton:focus {
+    outline: none;
+    border: none;
+  }
+  .loggedOutMsg {
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 100px;
+  }
+
+  .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    color: #444;
+    background-color: white;
+    padding: 5rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    font-size: 1.5rem;
+  }
+  .popupHeader {
+    margin-bottom: 1rem;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 860px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+  }
+  .closePopup {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 5rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+}
